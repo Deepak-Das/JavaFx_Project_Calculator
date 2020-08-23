@@ -7,10 +7,10 @@ public class EvaluateString {
     static String sbuf ="";
     static int pos=0;
 
-    public static  int evaluate(String expression){
+    public static  Double evaluate(String expression){
         char [] charsLitral=expression.toCharArray();
 
-        Stack <Integer> values = new Stack<>();
+        Stack <Double> values = new Stack<>();
         Stack<Character> ops= new Stack<>();
 
         for (char ch:charsLitral) {
@@ -24,7 +24,7 @@ public class EvaluateString {
                 sbuf=sbuf+ch;
 
                 if(ch==charsLitral[charsLitral.length-1]){
-                    values.push(Integer.parseInt(sbuf));
+                    values.push(Double.parseDouble(sbuf));
                     sbuf="";
                 }
             }
@@ -32,7 +32,7 @@ public class EvaluateString {
             else {
 
                 if(!sbuf.isEmpty()){
-                    values.push(Integer.parseInt(sbuf));
+                    values.push(Double.parseDouble(sbuf));
                     sbuf="";
                 }
 
@@ -55,7 +55,7 @@ public class EvaluateString {
         else return true;
     }
 
-    private static int applyOp(char op , int val1 , int val2){
+    private static Double applyOp(char op , Double val1 , Double val2){
         switch (op){
             case '/':
                 if(val1==0)
@@ -68,6 +68,6 @@ public class EvaluateString {
             case '-':
                 return val2-val1;
         }
-        return 0;
+        return null;
     }
 }
