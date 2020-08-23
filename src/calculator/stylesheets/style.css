@@ -1,0 +1,12 @@
+.button_num{
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+.button_oprator{
+    -fx-font-size: 16px;
+    /*-fx-font-weight: bold;*/
+}
+.label_style{
+    -fx-font-size: 24px;
+    -fx-font-weight: 500;
+}
